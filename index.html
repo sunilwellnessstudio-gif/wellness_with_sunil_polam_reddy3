@@ -1,0 +1,104 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+export default function SunilWellness() {
+  return (
+    <div className="min-h-screen bg-cream text-gray-800">
+      {/* Header */}
+      <header className="flex flex-col items-center justify-center py-10 bg-gray-100 shadow-md">
+        <img src="/logo.png" alt="Sunil Wellness Studio Logo" className="w-28 h-28 mb-4" />
+        <h1 className="text-3xl font-bold">Sunil Wellness Studio</h1>
+        <p className="text-lg">Empowering Professionals through NLP & Emotional Intelligence</p>
+      </header>
+
+      {/* Mentor Section */}
+      <section className="py-10 text-center">
+        <h2 className="text-2xl font-semibold mb-6">Meet Your Mentor</h2>
+        <div className="flex flex-col items-center">
+          <img src="/mentor.jpg" alt="Sunil Polam Reddy" className="w-48 h-48 rounded-full shadow-lg mb-4" />
+          <h3 className="text-xl font-bold">Sunil Kumar Polamreddy</h3>
+          <p className="text-gray-600">28 Years of Experience | Business Professional | Entrepreneur</p>
+          <a href="https://wa.me/917330679417" target="_blank" rel="noopener noreferrer">
+            <Button className="mt-4 bg-green-600 hover:bg-green-700">Connect on WhatsApp</Button>
+          </a>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-10 bg-gray-50">
+        <h2 className="text-2xl font-semibold text-center mb-8">Our Services</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+          {[{
+            title: "NLP Advanced Practitioner",
+            desc: "Certified NLP Practitioner helping individuals achieve breakthroughs through Neuro-Linguistic Programming techniques.",
+            link: "https://en.wikipedia.org/wiki/Neuro-linguistic_programming"
+          }, {
+            title: "Overcoming Limiting Beliefs",
+            desc: "Transform self-doubt into empowerment by reframing negative beliefs and unlocking your potential.",
+            link: "https://positivepsychology.com/limiting-beliefs/"
+          }, {
+            title: "Emotional Intelligence Coaching",
+            desc: "Develop awareness and control over your emotions for better personal and professional success.",
+            link: "https://www.verywellmind.com/what-is-emotional-intelligence-2795423"
+          }, {
+            title: "Goal Setting & Achievement",
+            desc: "Structured coaching for setting realistic goals and creating actionable steps for success.",
+            link: "https://www.mindtools.com/pages/article/newHTE_90.htm"
+          }, {
+            title: "Stress Management",
+            desc: "Techniques and practices designed to manage stress effectively and enhance well-being.",
+            link: "https://www.apa.org/topics/stress/tips"
+          }].map((service, idx) => (
+            <motion.div key={idx} whileHover={{ scale: 1.05 }}>
+              <Card className="shadow-lg">
+                <CardContent className="p-6">
+                  <h3 className="font-bold text-xl mb-2">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.desc}</p>
+                  <a href={service.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold">
+                    Learn More →
+                  </a>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Certificates Section */}
+      <section className="py-10 text-center">
+        <h2 className="text-2xl font-semibold mb-6">Certifications</h2>
+        <div className="flex flex-wrap justify-center gap-6 px-6">
+          <img src="/certificate1.jpg" alt="Certificate 1" className="w-72 rounded-lg shadow-lg" />
+          <img src="/certificate2.jpg" alt="Certificate 2" className="w-72 rounded-lg shadow-lg" />
+          <img src="/certificate3.jpg" alt="Certificate 3" className="w-72 rounded-lg shadow-lg" />
+          <img src="/certificate4.jpg" alt="Certificate 4" className="w-72 rounded-lg shadow-lg" />
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-10 bg-gray-50 text-center">
+        <h2 className="text-2xl font-semibold mb-6">Testimonials</h2>
+        <div className="max-w-3xl mx-auto">
+          <p className="italic text-gray-700 mb-4">“Sunil’s NLP sessions helped me overcome long-held fears and improve my leadership confidence.”</p>
+          <p className="font-semibold">— Client Testimonial</p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-10 text-center">
+        <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
+        <p>Phone: <a href="tel:+917330679417" className="text-blue-600">+91 73306 79417</a></p>
+        <p>Email: <a href="mailto:sunilwellnessstudio@gmail.com" className="text-blue-600">sunilwellnessstudio@gmail.com</a></p>
+        <a href="https://wa.me/917330679417?text=Hi%20Sunil%2C%20I%20am%20interested%20in%20a%20discovery%20call." target="_blank" rel="noopener noreferrer">
+          <Button className="mt-4 bg-green-600 hover:bg-green-700">Book a Discovery Call on WhatsApp</Button>
+        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-200 py-6 text-center text-gray-700">
+        <p>© 2025 Sunil Wellness Studio. All Rights Reserved.</p>
+      </footer>
+    </div>
+  );
+}
